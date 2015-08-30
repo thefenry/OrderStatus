@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace OrderStatus.Models
 {
@@ -21,7 +22,7 @@ namespace OrderStatus.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("OrderStatusApp", throwIfV1Schema: false)
         {
         }
         
@@ -29,5 +30,7 @@ namespace OrderStatus.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }
