@@ -19,7 +19,8 @@ namespace OrderStatus.Controllers
         // GET: api/OrderDetails
         public IQueryable<OrderDetail> GetOrderDetails()
         {
-            return db.OrderDetails;
+            var test = db.OrderDetails;
+            return test;
         }
 
         // GET: api/OrderDetails/5
