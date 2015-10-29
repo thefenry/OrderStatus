@@ -21,7 +21,7 @@ namespace OrderStatusAPI.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("OrderStatusApp", throwIfV1Schema: false)
         {
         }
         
