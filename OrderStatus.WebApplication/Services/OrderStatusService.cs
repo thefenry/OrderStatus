@@ -10,9 +10,11 @@ namespace OrderStatus.WebApplication.Services
 {
     class OrderStatusService
     {
-        public void GetAllOrders()
+        public string GetAllOrders()
         {
-            string url = "http://orderdetailapi.azurewebsites.net/api/Orders";
+            //string url = "http://orderdetailapi.azurewebsites.net/api/Orders";
+            string url = "http://www.orderstatusapi.com/Api/orders";
+
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(url);
 
@@ -24,12 +26,13 @@ namespace OrderStatus.WebApplication.Services
             if (response.IsSuccessStatusCode)
             {
                 //Parse the response body
-                var dataObjects = response.Content.ReadAsStringAsync().Result;
+                string dataObjects = response.Content.ReadAsStringAsync().Result;
+                return dataObjects;
             }
             else
             {
-                string Error = string.Format("{0}: {1}", response.StatusCode, response.ReasonPhrase);
-                //throw Exception(response.StatusCode, response.ReasonPhrase);
+                string Error = string.Format("{0}: {1}", response.StatusCode, response.ReasonPhrase);                
+                throw new Exception(response.ReasonPhrase);
             }
         }
     }

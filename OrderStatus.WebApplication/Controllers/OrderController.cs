@@ -3,18 +3,19 @@ using OrderStatus.WebApplication.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace OrderStatus.WebApplication.Controllers
 {
     public class OrderController : Controller
-    {        
+    {
         // GET: Order
         public ActionResult Index()
         {
             var order = new OrderStatusService();
-            order.GetAllOrders();
+            //ViewBag["orders"] = order.GetAllOrders();
             return View();
         }
 
