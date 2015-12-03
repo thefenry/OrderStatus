@@ -2,6 +2,7 @@ namespace OrderStatusAPI.Migrations
 {
     using Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -28,10 +29,16 @@ namespace OrderStatusAPI.Migrations
             //    );
             //
 
+            var statuses = new List<Status> { new Status { OrderStatus = "New" }, new Status { OrderStatus = "Active" }, new Status { OrderStatus = "Complete" } };
+            statuses.ForEach(status => context.Status.AddOrUpdate(x =>x.OrderStatus, status));
+
+            context.SaveChanges();
+           
             context.Orders.AddOrUpdate(
-                p=> p.Address,
-                new Order { Address = "Test Address", Description="Test Description", Phone="555-555-5555", ClientName="Test name"}
+                p => p.Address,
+                new Order { Address = "Test Address", Description = "Test Description", Phone = "555-555-5555", ClientName = "Test name", StatusId = 1 }
                 );
+
         }
     }
 }

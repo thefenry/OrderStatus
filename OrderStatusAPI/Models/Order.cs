@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,11 @@ namespace OrderStatusAPI.Models
         [Required]
         public string Address { get; set; }
         public byte Image { get; set; }
+
+
+        // Foreign Key
+        public int StatusId { get; set; }
+        // Navigation property
+        public virtual Status Status { get; set; }
     }
 }
