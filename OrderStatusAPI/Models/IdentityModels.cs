@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
-using System.Data.Entity;
 
 namespace OrderStatusAPI.Models
 {
@@ -31,7 +30,6 @@ namespace OrderStatusAPI.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Status> Status { get; set; }
+        public System.Data.Entity.DbSet<OrderStatusAPI.Models.Order> Orders { get; set; }
     }
 }

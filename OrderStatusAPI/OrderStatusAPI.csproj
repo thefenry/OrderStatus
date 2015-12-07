@@ -224,16 +224,11 @@
     <Compile Include="Migrations\201510290144230_AddOrders.Designer.cs">
       <DependentUpon>201510290144230_AddOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512030443119_AddStatus.cs" />
-    <Compile Include="Migrations\201512030443119_AddStatus.Designer.cs">
-      <DependentUpon>201512030443119_AddStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -313,9 +308,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510290144230_AddOrders.resx">
       <DependentUpon>201510290144230_AddOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512030443119_AddStatus.resx">
-      <DependentUpon>201512030443119_AddStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
