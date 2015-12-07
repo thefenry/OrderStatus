@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201510290144230_AddOrders.Designer.cs">
       <DependentUpon>201510290144230_AddOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512070528025_AddStatusField.cs" />
+    <Compile Include="Migrations\201512070528025_AddStatusField.Designer.cs">
+      <DependentUpon>201512070528025_AddStatusField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -308,6 +312,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510290144230_AddOrders.resx">
       <DependentUpon>201510290144230_AddOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512070528025_AddStatusField.resx">
+      <DependentUpon>201512070528025_AddStatusField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

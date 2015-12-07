@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace OrderStatusAPI.Models
 {
+    public enum Status
+    {
+        New, Active, Complete
+    }
     public class Order
     {
         public int ID { get; set; }
@@ -18,5 +22,7 @@ namespace OrderStatusAPI.Models
         [Required]
         public string Address { get; set; }
         public byte Image { get; set; }
+
+        public Status Status { get; set; }
     }
 }
