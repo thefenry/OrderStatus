@@ -30,7 +30,8 @@ namespace OrderStatusAPI.Migrations
 
             context.Orders.AddOrUpdate(
                 p=> p.Address,
-                new Order { Address = "Test Address", Description="Test Description", Phone="555-555-5555", ClientName="Test name"}
+                new Order { Address = "Test Address", Description="Test Description", Phone="555-555-5555", ClientName="Test name", Status = Status.New},
+                new Order { Address = "Test Address 2", Description = "Test Description 2", Phone = "555-555-5555", ClientName = "Test name 2", Status = Status.Active }
                 );
         }
     }

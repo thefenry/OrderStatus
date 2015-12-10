@@ -5,9 +5,27 @@
 <script src="~/Scripts/Index/app.js"></script>
 
 <script src="~/Scripts/Index/OrderController.js"></script>
-<h2>Index</h2>
+<h2>Orders</h2>
 <div ng-app="OrderApp">
     <div ng-controller="OrderController">
+        <div class="col-sm-4">
+            <div ng-repeat="order in NewOrders">
+                {{order.ClientName}}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div ng-repeat="order in ActiveOrders">
+                {{order.ClientName}}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div ng-repeat="order in CompletedOrders">
+                {{order.ClientName}}
+            </div>
+        </div>
+
+
+
         <div ng-repeat="order in Orders">
             {{order.ClientName}}
         </div>
