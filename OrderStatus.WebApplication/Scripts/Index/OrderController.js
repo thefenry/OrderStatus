@@ -33,4 +33,23 @@
         });
 
     }
+
+    $scope.moveToGroup = function () {
+        debugger;
+        //for (var index = 0; index < $scope.items.length; index++) {
+
+        //    var item = $scope.items[index];
+
+        //    if (item.id == id) {
+        //        // add to dropped array
+        //        $scope.dropped.push(item);
+
+        //        // remove from items array
+        //        $scope.items.splice(index, 1);
+        //    }
+        //}
+
+        $scope.$apply();
+    };
+
 }]);

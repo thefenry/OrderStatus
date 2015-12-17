@@ -382,6 +382,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\Index\app.js" />
+    <Content Include="Scripts\Index\Directives\Drag&amp;DropDirectives.js" />
     <Content Include="Scripts\Index\OrderController.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
