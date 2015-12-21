@@ -34,8 +34,24 @@
 
     }
 
-    $scope.moveToGroup = function () {
-        debugger;
+    $scope.moveToGroup = function (itemId, target) {
+        for (var index = 0; index < $scope.ActiveOrders.length; index++) {
+            if ($scope.ActiveOrders[index].ID === itemId) {
+                switch (target) {
+                    case "CompletedOrders":
+                        $scope.CompletedOrders.push($scope.ActiveOrders[index]);
+                        $scope.ActiveOrders.splice(index, 1);
+                        break;
+                    case "NewOrders":
+                        break;
+                    case "ActiveOrders":
+                        break;
+                    default:
+
+                }
+            }
+            debugger;
+        }
         //for (var index = 0; index < $scope.items.length; index++) {
 
         //    var item = $scope.items[index];
