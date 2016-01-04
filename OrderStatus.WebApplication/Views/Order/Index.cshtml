@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4" drop-target container="ActiveOrders" style="height:100px;">
             <div ng-repeat="order in ActiveOrders">
                 <div draggable="true" itemid="{{order.ID}}">
                     {{order.ClientName}}
