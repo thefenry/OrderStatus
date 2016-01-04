@@ -8,7 +8,7 @@
 <h2>Orders</h2>
 <div ng-app="OrderApp">
     <div ng-controller="OrderController">
-        <div drop-target class="col-sm-4">
+        <div drop-target class="col-sm-4" container="NewOrders" style="height:100px;">
             <div ng-repeat="order in NewOrders">
                 <div draggable="true" itemid="{{order.ID}}">
                     {{order.ClientName}}
@@ -24,7 +24,7 @@
         </div>
         <div class="col-sm-4" drop-target container="CompletedOrders" style="border:1px red solid; height: 100px;">
             <div ng-repeat="order in CompletedOrders">
-                <div>
+                <div draggable="true" itemid="{{order.ID}}">
                     {{order.ClientName}}
                 </div>
             </div>
