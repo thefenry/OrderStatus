@@ -42,6 +42,7 @@
                 break;
             }
         }
+        debugger;
         switch (objectToChange.Status) {
             case 0:
                 var index = $scope.NewOrders.indexOf(objectToChange);
@@ -73,8 +74,17 @@
                 break;
             default:
 
-        }      
+        }
 
+        //PUT api/Orders/{id}
+        debugger;
+        $http.put('http://www.orderstatusapi.com/Api/orders/'+ itemId, objectToChange)
+         .success(function (data) {
+
+         })
+         .error(function (data) {             
+             alert("An Error occured");
+         });
         $scope.$apply();
     };
 
