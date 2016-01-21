@@ -42,7 +42,6 @@
                 break;
             }
         }
-        debugger;
         switch (objectToChange.Status) {
             case 0:
                 var index = $scope.NewOrders.indexOf(objectToChange);
@@ -87,5 +86,12 @@
          });
         $scope.$apply();
     };
+
+    $(".modal-link").on('click', function (e) {
+        e.preventDefault();
+        $(this).attr('data-target', '#OrderDetailContainer');
+        $(this).attr('data-toggle', 'modal');
+    });
+
 
 }]);

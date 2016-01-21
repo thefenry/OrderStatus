@@ -19,6 +19,10 @@ namespace OrderStatus.WebApplication.Controllers
             return View();
         }
 
+        public PartialViewResult OrderDetail()
+        {
+            return PartialView();
+        } 
         // GET: Order/Details/5
         //public ActionResult Details(int id)
         //{

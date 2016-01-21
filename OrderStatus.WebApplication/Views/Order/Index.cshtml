@@ -30,6 +30,18 @@
             </div>
         </div>
     </div>
+
+
+    @*Modal link and container*@
+    @Html.ActionLink("Open", "OrderDetail", "Order", new { @class = "img-btn-addnote modal-link", title = "Open" })
+    <div id="OrderDetailContainer" class="modal fade" tabindex="-1" role="dialog" style="border:5px solid #3A87AD">
+        <a href="#close" title="Close" class="modal-close-btn">X</a>
+        <div class="modal-content" style="width:500px !important; margin: 10px auto !important">
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
 </div>
 
 
