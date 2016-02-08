@@ -10,37 +10,38 @@
     <div ng-controller="OrderController">
         <div drop-target class="col-sm-4" container="NewOrders" style="height:100px;">
             <div ng-repeat="order in NewOrders">
-                <div draggable="true" itemid="{{order.ID}}">
+                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)">
                     {{order.ClientName}}
                 </div>
             </div>
         </div>
         <div class="col-sm-4" drop-target container="ActiveOrders" style="height:100px;">
             <div ng-repeat="order in ActiveOrders">
-                <div draggable="true" itemid="{{order.ID}}">
+                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)">
                     {{order.ClientName}}
                 </div>
             </div>
         </div>
         <div class="col-sm-4" drop-target container="CompletedOrders" style="border:1px red solid; height: 100px;">
             <div ng-repeat="order in CompletedOrders">
-                <div draggable="true" itemid="{{order.ID}}">
+                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)">
                     {{order.ClientName}}
                 </div>
             </div>
         </div>
-    </div>
 
 
-    @*Modal link and container*@
-    @Html.ActionLink("Open", "OrderDetail", "Order", new { @class = "img-btn-addnote modal-link", title = "Open" })
-    <div id="OrderDetailContainer" class="modal fade" tabindex="-1" role="dialog" style="border:5px solid #3A87AD">
-        <a href="#close" title="Close" class="modal-close-btn">X</a>
-        <div class="modal-content" style="width:500px !important; margin: 10px auto !important">
-            <div class="modal-body">
+    @*Modal container*@
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-            </div>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">x</span>
+            <p>{{detail.ClientName}}</p>
         </div>
+
+    </div>
     </div>
 </div>
 
