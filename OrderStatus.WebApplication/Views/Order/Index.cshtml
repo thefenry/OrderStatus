@@ -7,41 +7,62 @@
 <script src="~/Scripts/Index/Directives/Drag&DropDirectives.js"></script>
 <h2>Orders</h2>
 <div ng-app="OrderApp">
-    <div ng-controller="OrderController">
-        <div drop-target class="col-sm-4" container="NewOrders" style="height:100px;">
+    <div ng-controller="OrderController" class="row">
+        <div drop-target class="col-sm-4" container="NewOrders" style="min-height: 500px;">
+            <h1>New Order</h1>
             <div ng-repeat="order in NewOrders">
-                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)">
-                    {{order.ClientName}}
+                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" style="border:1px #e2e2e2 solid;">
+                    <h2>{{order.Description}}</h2>
+                    <p>
+                        Client: {{order.ClientName}}
+                    </p>
+                    <p>
+                        Contact: {{order.Phone}}
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4" drop-target container="ActiveOrders" style="height:100px;">
+        <div class="col-sm-4" drop-target container="ActiveOrders" style="min-height: 500px;">
+            <h1>Started Processing</h1>
             <div ng-repeat="order in ActiveOrders">
-                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)">
-                    {{order.ClientName}}
+                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" style="border:1px #e2e2e2 solid;">
+                    <h2>{{order.Description}}</h2>
+                    <p>
+                        Client: {{order.ClientName}}
+                    </p>
+                    <p>
+                        Contact: {{order.Phone}}
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4" drop-target container="CompletedOrders" style="border:1px red solid; height: 100px;">
+        <div class="col-sm-4" drop-target container="CompletedOrders" style="min-height: 500px;">
+            <h1>Completed Order</h1>
             <div ng-repeat="order in CompletedOrders">
-                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)">
-                    {{order.ClientName}}
+                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" style="border:1px #e2e2e2 solid;">
+                    <h2>{{order.Description}}</h2>
+                    <p>
+                        Client: {{order.ClientName}}
+                    </p>
+                    <p>
+                        Contact: {{order.Phone}}
+                    </p>
                 </div>
             </div>
         </div>
 
 
-    @*Modal container*@
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+        @*Modal container*@
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">x</span>
-            <p>{{detail.ClientName}}</p>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">x</span>
+                <p>{{detail.ClientName}}</p>
+            </div>
+
         </div>
-
-    </div>
     </div>
 </div>
 
