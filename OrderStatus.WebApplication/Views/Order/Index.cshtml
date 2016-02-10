@@ -59,7 +59,32 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">x</span>
-                <p>{{detail.ClientName}}</p>
+                <form>
+                    <h2>Order Details</h2>
+                    <div>
+                        <label for="Description">Description</label>
+                        <input id="Description" type="text" value="{{detail.Description}}" />
+                    </div>
+                    <div>
+                        <label for="ClientName">Client</label>
+                        <input id="ClientName" type="text" value="{{detail.ClientName}}" />
+                    </div>
+                    <div>
+                        <label for="Phone">Phone</label>
+                        <input id="Phone" type="tel" value="{{detail.Phone}}" />
+                    </div>
+                    <div>
+                        <label for="Address">Address</label>
+                        <input id="Address" type="text" value="{{detail.Address}}" />
+                    </div>
+                    <div>
+                        <label for="Image">Image</label>
+                        <input id="Image" type="text" value="{{detail.Image}}" />
+                    </div>
+                    <div>                        
+                        <input type="button" value="Update" />
+                    </div>
+                </form>
             </div>
 
         </div>
