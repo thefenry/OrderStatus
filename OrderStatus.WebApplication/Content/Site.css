@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: darkorange;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,6 +24,31 @@ textarea {
     max-width: 280px;
 }
 
+h1, h2 {
+    color: #fff;
+}
+
+/******************************************************
+    Orders Containers
+******************************************************/
+.order-container{
+    background-color: #333;
+    min-height:500px;
+}
+
+.order-card-header{
+    text-align: center;
+    padding: 10px;
+}
+
+.order-card-repeater{
+    padding: 10px;
+}
+
+.order-card{
+    border: 1px #e2e2e2 solid;
+    background-color: #fff;
+}
 
 
 /* The Modal (background) */

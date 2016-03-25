@@ -5,52 +5,57 @@
 <script src="~/Scripts/Index/app.js"></script>
 <script src="~/Scripts/Index/OrderController.js"></script>
 <script src="~/Scripts/Index/Directives/Drag&DropDirectives.js"></script>
-<h2>Orders</h2>
+<h1>Current Orders</h1>
 <div ng-app="OrderApp">
     <div ng-controller="OrderController" class="row">
-        <div drop-target class="col-sm-4" container="NewOrders" style="min-height: 500px;">
-            <h1>New Order</h1>
-            <div ng-repeat="order in NewOrders">
-                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" style="border:1px #e2e2e2 solid;">
-                    <h2>{{order.Description}}</h2>
-                    <p>
-                        Client: {{order.ClientName}}
-                    </p>
-                    <p>
-                        Contact: {{order.Phone}}
-                    </p>
+        <div class="col-sm-4" style="min-height:500px;">
+            <div class="order-container" drop-target container="NewOrders">
+                <h2 class="order-card-header">New Order</h2>
+                <div ng-repeat="order in NewOrders" class="order-card-repeater">
+                    <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" class="order-card">
+                        <h3>{{order.Description}}</h3>
+                        <p>
+                            Client: {{order.ClientName}}
+                        </p>
+                        <p>
+                            Contact: {{order.Phone}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4" drop-target container="ActiveOrders" style="min-height: 500px;">
-            <h1>Started Processing</h1>
-            <div ng-repeat="order in ActiveOrders">
-                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" style="border:1px #e2e2e2 solid;">
-                    <h2>{{order.Description}}</h2>
-                    <p>
-                        Client: {{order.ClientName}}
-                    </p>
-                    <p>
-                        Contact: {{order.Phone}}
-                    </p>
+        <div class="col-sm-4"  style="min-height:500px;">
+            <div class="order-container" drop-target container="ActiveOrders">
+                <h2 class="order-card-header">Started Processing</h2>
+                <div ng-repeat="order in ActiveOrders" class="order-card-repeater">
+                    <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" class="order-card">
+                        <h3>{{order.Description}}</h3>
+                        <p>
+                            Client: {{order.ClientName}}
+                        </p>
+                        <p>
+                            Contact: {{order.Phone}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4" drop-target container="CompletedOrders" style="min-height: 500px;">
-            <h1>Completed Order</h1>
-            <div ng-repeat="order in CompletedOrders">
-                <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" style="border:1px #e2e2e2 solid;">
-                    <h2>{{order.Description}}</h2>
-                    <p>
-                        Client: {{order.ClientName}}
-                    </p>
-                    <p>
-                        Contact: {{order.Phone}}
-                    </p>
+        <div class="col-sm-4" style="min-height:500px;">
+            <div class="order-container" drop-target container="CompletedOrders">
+                <h2 class="order-card-header">Completed Order</h2>
+                <div ng-repeat="order in CompletedOrders" class="order-card-repeater">
+                    <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" class="order-card">
+                        <h3>{{order.Description}}</h3>
+                        <p>
+                            Client: {{order.ClientName}}
+                        </p>
+                        <p>
+                            Contact: {{order.Phone}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-
 
         @*Modal container*@
         <!-- The Modal -->
@@ -81,7 +86,7 @@
                         <label for="Image">Image</label>
                         <input id="Image" type="text" value="{{detail.Image}}" />
                     </div>
-                    <div>                        
+                    <div>
                         <input type="button" value="Update" />
                     </div>
                 </form>
