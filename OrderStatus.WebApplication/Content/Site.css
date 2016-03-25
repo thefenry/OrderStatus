@@ -31,25 +31,29 @@ h1, h2 {
 /******************************************************
     Orders Containers
 ******************************************************/
-.order-container{
+.order-container {
     background-color: #333;
-    min-height:500px;
+    min-height: 500px;
 }
 
-.order-card-header{
+.order-card-header {
     text-align: center;
     padding: 10px;
 }
 
-.order-card-repeater{
-    padding: 10px;
+.order-card-repeater {
+    padding: 5px 10px;
 }
 
-.order-card{
+.order-card {
+    padding: 0 10px;
     border: 1px #e2e2e2 solid;
     background-color: #fff;
 }
 
+/********************************************
+   Order Details Modal
+********************************************/
 
 /* The Modal (background) */
 .modal {
@@ -82,8 +86,7 @@ h1, h2 {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
