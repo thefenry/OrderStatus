@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Orders";
+}
+<script src="~/Scripts/Index/app.js"></script>
+<script src="~/Scripts/Index/OrderController.js"></script>
+<script src="~/Scripts/Index/Directives/Drag&DropDirectives.js"></script>
+<h1>Current Orders</h1>
+<div ng-app="OrderApp">
+    <div ng-controller="OrderController" class="row">
+        <div class="col-sm-4" style="min-height:500px;">
+            <div class="order-container" drop-target container="NewOrders">
+                <h2 class="order-card-header">New Order</h2>
+                <div ng-repeat="order in NewOrders" class="order-card-repeater">
+                    <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" class="order-card">
+                        <h3>{{order.Description}}</h3>
+                        <p>
+                            Client: {{order.ClientName}}
+                        </p>
+                        <p>
+                            Contact: {{order.Phone}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"  style="min-height:500px;">
+            <div class="order-container" drop-target container="ActiveOrders">
+                <h2 class="order-card-header">Started Processing</h2>
+                <div ng-repeat="order in ActiveOrders" class="order-card-repeater">
+                    <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" class="order-card">
+                        <h3>{{order.Description}}</h3>
+                        <p>
+                            Client: {{order.ClientName}}
+                        </p>
+                        <p>
+                            Contact: {{order.Phone}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4" style="min-height:500px;">
+            <div class="order-container" drop-target container="CompletedOrders">
+                <h2 class="order-card-header">Completed Order</h2>
+                <div ng-repeat="order in CompletedOrders" class="order-card-repeater">
+                    <div draggable="true" itemid="{{order.ID}}" ng-click="openModal(order.ID)" class="order-card">
+                        <h3>{{order.Description}}</h3>
+                        <p>
+                            Client: {{order.ClientName}}
+                        </p>
+                        <p>
+                            Contact: {{order.Phone}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*Modal container*@
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">x</span>
+                <form>
+                    <h2>Order Details</h2>
+                    <div>
+                        <label for="Description">Description</label>
+                        <input id="Description" type="text" value="{{detail.Description}}" />
+                    </div>
+                    <div>
+                        <label for="ClientName">Client</label>
+                        <input id="ClientName" type="text" value="{{detail.ClientName}}" />
+                    </div>
+                    <div>
+                        <label for="Phone">Phone</label>
+                        <input id="Phone" type="tel" value="{{detail.Phone}}" />
+                    </div>
+                    <div>
+                        <label for="Address">Address</label>
+                        <input id="Address" type="text" value="{{detail.Address}}" />
+                    </div>
+                    <div>
+                        <label for="Image">Image</label>
+                        <input id="Image" type="text" value="{{detail.Image}}" />
+                    </div>
+                    <div>
+                        <input type="button" value="Update" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
